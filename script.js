@@ -2,17 +2,23 @@ const envelopeContainer = document.getElementById('envelopeContainer');
 const introVideo = document.getElementById('introVideo');
 const bgMusic = document.getElementById('bgMusic'); 
 
+let hasStarted = false;
+
 function startExperience() {
-    // Play both directly (Removed bgMusic.load() because it interrupts iOS)
+    // If it already started, don't try to start it again
+    if (hasStarted) return; 
     
-    // We add a tiny delay to the video to ensure the audio token registers first
-    bgMusic.play().catch(error => console.log("Audio blocked:", error));
+    // Force the volume up and play
+    bgMusic.volume = 1.0;
+    bgMusic.play();
     introVideo.play();
+    
+    hasStarted = true; // Mark as started
 }
 
-// Listen for BOTH standard clicks and mobile screen taps (Changed to touchend)
-introVideo.addEventListener('click', startExperience);
-introVideo.addEventListener('touchend', startExperience, { once: true });
+// Attach the listener to the ENTIRE window, not just the video
+window.addEventListener('click', startExperience);
+window.addEventListener('touchstart', startExperience);
 
 // When the video reaches the end, slide up the invitation card
 introVideo.onended = function() {
