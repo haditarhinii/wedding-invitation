@@ -1,9 +1,11 @@
 const envelopeContainer = document.getElementById('envelopeContainer');
 const introVideo = document.getElementById('introVideo');
+const bgMusic = document.getElementById('bgMusic'); // <-- Add this to grab the audio file
 
 // 1. Play the video when the user clicks/taps anywhere on it
 introVideo.addEventListener('click', () => {
     introVideo.play();
+    bgMusic.play();
 });
 
 // 2. When the video reaches the end, slide up the invitation card
