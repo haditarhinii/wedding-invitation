@@ -297,8 +297,17 @@ body, html {
 }
 
 .intro {
-    font-size: 1.1rem;
+    font-family: Simplified Arabic Fixed;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    width: 270px;
     margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .intro p{
@@ -310,6 +319,7 @@ body, html {
     letter-spacing: 0%;
     text-align: center;
     width: 270px;
+    margin: 0;
 }
 
 .names {
@@ -322,11 +332,16 @@ body, html {
     color: #8E7648;
 }
 
+.icons {
+    display: flex;
+    gap: 25%;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
 .info-grid {
     display: flex;
     justify-content: space-between;
-    margin: 40px 0;
-    padding: 20px 0;
 }
 
 .info-item {
@@ -355,16 +370,20 @@ body, html {
     font-size: 1rem;
     line-height: 1.8;
     margin-bottom: 30px;
+    margin-top: 50px;
 }
 
 .whish-logo {
     width: 150px;
+    margin-left: -30px
 }
 
 .registry {
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .registry p {
@@ -395,6 +414,7 @@ body, html {
     gap: 15px;
     padding: 0 20px;
     box-sizing: border-box;
+    margin-bottom: 50px;;
 }
 
 .countdown-box {
